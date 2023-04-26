@@ -8,27 +8,31 @@ module.exports = (sequelize) => {
       type:DataTypes.UUID,
       primaryKey:true,
       defaultValue:UUIDV4
-    },    
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique:true
     },
-    image:{
+    image: {
       type:DataTypes.STRING,
       allowNull:false
     },
     summary:{
-      type:DataTypes.TEXT,
-      
+      type:DataTypes.STRING,
+      allowNull:false
     },
     healthScore:{
       type:DataTypes.INTEGER,
       allowNull:false
-    },
+    },    
     stepByStep:{
-      type:DataTypes.TEXT,
+      type:DataTypes.STRING,
       allowNull:false
-    }
-
-  },{timestamps:false})
+    },
+    createdInDb:{
+      type:DataTypes.BOOLEAN,
+      defaultValue:true
+    }    
+  },{timestamps:false});
 };
