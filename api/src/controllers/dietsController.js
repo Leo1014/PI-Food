@@ -9,7 +9,7 @@ const getDiets = async() => {
 
   const diets = data.results.map(result =>{
     return{
-      name:(result.diets),
+      name:result.diets,
       otherDiet:Object.keys(data.results[0])[0]
     }
   }) 

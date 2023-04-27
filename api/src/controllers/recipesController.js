@@ -29,7 +29,7 @@ const getAllRecipesApi = async()=>{
               return step.step;
             });
         }).flat(),
-        diets:result.diets
+        diets:result.diets.length ? result.diets : "No associeted diets" 
     }
   })
   return allRecipes;
@@ -64,13 +64,13 @@ const getAllByName = async(name)=>{
 }
 
 
-// const getAllById = async(id)=>{
-//   const allRecipes = await getAllRecipes();
-//   const filterRecipes = allRecipes.filter(recipe=>recipe.id===id);
-//   console.log(filterRecipes);
-//   return filterRecipes;
-// }
+const getAllById = async(id)=>{
+  const allRecipes = await getAllRecipes();
+  const filterRecipes = allRecipes.filter(recipe=>recipe.id===id);
+  console.log(filterRecipes);
+  return filterRecipes;
+}
 
 
-module.exports = {createRecipe, getAllRecipes, getAllByName};
+module.exports = {createRecipe, getAllRecipes, getAllByName, getAllById};
 

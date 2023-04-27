@@ -1,4 +1,4 @@
-const {createRecipe, getAllRecipes, getAllByName}  = require("../controllers/recipesController");
+const {createRecipe, getAllRecipes, getAllByName, getAllById}  = require("../controllers/recipesController");
 
 
 const handlerRecipe = async(req, res)=>{
@@ -31,16 +31,16 @@ const handlerAllRecipes = async(req, res)=>{
     
 
 
-// const handlerAllById = async(req, res)=>{
-//     const { id } = req.params;
-//     try {
-//         const allById = await getAllById(id);
-//         res.status(200).json(allById)
-//         console.log(allById);
-//     } catch (error) {
-//         res.status(400).send("no existe la receta")
-//     }
-// }
+const handlerAllById = async(req, res)=>{
+    const { id } = req.params;
+    try {
+        const allById = await getAllById(id);
+        res.status(200).json(allById)
+        console.log(allById);
+    } catch (error) {
+        res.status(400).send("Does not exist the ID")
+    }
+}
 
 
-module.exports = {handlerRecipe, handlerAllRecipes};
+module.exports = {handlerRecipe, handlerAllRecipes, handlerAllById};
