@@ -1,22 +1,27 @@
 const axios = require("axios");
 const { Diet } = require("../db")
-// require("dotenv").config();
-// const {API_KEY} = process.env
 
 const getDiets = async() => {
-  const data = (await axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=c13fab76c7324d37989f1da785afa1aa&addRecipeInformation=true&number=100")).data
-  const diets = data.results.map(result => result.diets).flat()
-  const dietObjects = [...new Set(diets)].map(diet => ({ name: diet }))
+  const data = (await axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=2fbebe603fee4666ad623518af67b357&addRecipeInformation=true&number=100")).data
 
-  //console.log(dietObjects)
-  
+
+  const allDiets = [];
+
+  const diets = data.results.map(result =>{
+    return{
+      name:(result.diets),
+      otherDiet:Object.keys(data.results[0])[0]
+    }
+  }) 
+
+  diets.forEach(el => allDiets.push(...el.name, el.otherDiet));
+ 
+   const dietObjects = [...new Set(allDiets)].map(diet => ({ name: diet }))
+
   const saveDb = await Diet.bulkCreate(dietObjects)
-  // console.log(saveDb)
-
-  return dietObjects
+  
+  return saveDb;
 }
 
 
 module.exports = { getDiets }
-
-//getDiets();
