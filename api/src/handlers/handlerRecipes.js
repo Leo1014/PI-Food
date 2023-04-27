@@ -16,9 +16,14 @@ const handlerRecipe = async(req, res)=>{
 const handlerAllRecipes = async(req, res)=>{
     const { name } = req.query;
     try {
-        const result = name ? await getAllByName(name) : await getAllRecipes();
-        res.status(200).json(result)
-        console.log(result.length);
+        if(name){
+            const result = await getAllByName(name);
+            result.length ? res.status(200).json(result) : res.status(404).send("Your recipe does not exist.")  
+        } else{
+            const allRecipes = await getAllRecipes();
+            console.log(allRecipes.length);
+            res.status(200).json(allRecipes)
+        }
     } catch (error) {
         res.status(400).send({error:error.message})
     }
