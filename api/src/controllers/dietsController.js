@@ -2,7 +2,7 @@ const axios = require("axios");
 const { Diet } = require("../db")
 
 const getDiets = async() => {
-  const data = (await axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=2fbebe603fee4666ad623518af67b357&addRecipeInformation=true&number=100")).data
+  const data = (await axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=1c4658e4dbef449998ad65918ef92bd8&addRecipeInformation=true&number=100")).data
 
 
   const allDiets = [];

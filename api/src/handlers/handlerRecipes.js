@@ -34,11 +34,13 @@ const handlerAllRecipes = async(req, res)=>{
 const handlerAllById = async(req, res)=>{
     const { id } = req.params;
     try {
-        const allById = await getAllById(id);
-        res.status(200).json(allById)
-        console.log(allById);
+        if(id){
+            const result = await getAllById(id);
+            result.length ? res.status(200).json(result) : res.status(404).send("There is not information for this ID")
+            console.log(result.length); 
+        } 
     } catch (error) {
-        res.status(400).send("Does not exist the ID")
+        res.status(400).send({error:error.message})
     }
 }
 

@@ -16,7 +16,7 @@ const createRecipe = async(name, image, summary, healthScore, stepByStep, diets)
 
 
 const getAllRecipesApi = async()=>{
-    const data = (await axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=9bd9403db46a4af6bfaa8961373554b5&addRecipeInformation=true&number=100")).data
+    const data = (await axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=1c4658e4dbef449998ad65918ef92bd8&addRecipeInformation=true&number=100")).data
   const allRecipes = data.results.map(result =>{
     return{
         id:result.id,
@@ -66,8 +66,8 @@ const getAllByName = async(name)=>{
 
 const getAllById = async(id)=>{
   const allRecipes = await getAllRecipes();
-  const filterRecipes = allRecipes.filter(recipe=>recipe.id===id);
-  console.log(filterRecipes);
+  const filterRecipes = allRecipes.filter(recipe=>recipe.id.toString()===id.toString());
+  
   return filterRecipes;
 }
 
