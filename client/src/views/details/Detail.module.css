@@ -1,0 +1,41 @@
+.container {
+    background: linear-gradient(to bottom, #4286f4, #efe3f5);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .name {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .image {
+    border-radius: 20px;
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .summary {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .healthScore {
+    margin-bottom: 10px;
+  }
+  
+  .stepByStep {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .diets {
+    margin-bottom: 20px;
+  }
+  
