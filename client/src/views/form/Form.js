@@ -3,8 +3,8 @@ import style from "./Form.module.css"
 
 export default function Form(){
     return(
-        <div className={style.container}>
-            <form>
+        <div>
+            <form className={style.container}>
                <h3>Crea tu Receta!!!</h3> <br/>
               
                <label>Nombre: </label>
@@ -16,7 +16,7 @@ export default function Form(){
                <label>Resumen del plato: </label>
                <textarea></textarea>
 
-               <label>Nivel de Salubalidad: </label>
+               <label>Nivel de Salubilidad: </label>
                <input type="number" />
 
               

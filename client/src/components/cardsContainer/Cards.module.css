@@ -1,13 +1,6 @@
-/* .container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1em;
-    border: 1px solid;
-    border-radius: 6px;
-    margin-left: 12px;
-} */
+
 .container {
+    overflow: hidden;
     background-image: url("https://i.ibb.co/gDknvgt/food.jpg");
     background-color: rgba(203, 237, 228, 0);
     background-size: cover;
@@ -18,8 +11,8 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-between;
-    gap: 2em;
-    margin: 0;
+    gap: 0.5em;
+    margin: 10px;
     padding: 0;
   }
   

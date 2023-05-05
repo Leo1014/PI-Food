@@ -1,4 +1,4 @@
-form {
+.container {
     background: linear-gradient(to bottom, #4286f4, #efe3f5);
     max-width: 500px;
     margin: 0 auto;
@@ -12,7 +12,7 @@ form {
   h3 {
     font-size: 24px;
     margin-bottom: 20px;
-  }
+}
   
   label {
     display: block;
@@ -40,6 +40,7 @@ form {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
   }
   
   button:hover {
