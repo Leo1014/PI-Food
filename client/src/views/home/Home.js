@@ -1,4 +1,6 @@
 import CardsContainer from "../../components/cardsContainer/CardsContainer"
+import Search from "../../components/searchComponent/search";
+
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getAllRecipes } from "../../redux/actions";
@@ -15,7 +17,7 @@ export default function Home(){
 
     return(
         <div>
-            <h1>Esta es la home</h1>
+            <Search />
             <CardsContainer />
         </div>
     )
